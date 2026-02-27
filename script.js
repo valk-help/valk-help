@@ -1,9 +1,11 @@
-// Snow canvas
+// Snow canvas - Fixed for your current design
 (function(){
   const SNOW_COUNT = 160;
   const SNOW_SPEED = 1.0;
   const WIND = 0.12;
   const wrap = document.getElementById('snow-canvas-wrap');
+  if (!wrap) return;
+
   const canvas = document.createElement('canvas');
   canvas.style.width = '100%';
   canvas.style.height = '100%';
@@ -13,8 +15,9 @@
   canvas.style.zIndex = '60';
   canvas.style.pointerEvents = 'none';
   wrap.appendChild(canvas);
+
   const ctx = canvas.getContext('2d');
-  let width=0, height=0, dpi = window.devicePixelRatio || 1;
+  let width = 0, height = 0, dpi = window.devicePixelRatio || 1;
 
   function resize(){
     dpi = window.devicePixelRatio || 1;
@@ -54,14 +57,14 @@
   };
 
   const flakes = [];
-  for(let i=0; i<SNOW_COUNT; i++) flakes.push(new Snowflake());
+  for(let i = 0; i < SNOW_COUNT; i++) flakes.push(new Snowflake());
 
   let last = performance.now();
   function loop(now){
     const delta = Math.min(1.5, (now-last)/16.66);
     last = now;
     ctx.clearRect(0,0,width,height);
-    for(let i=0; i<flakes.length; i++){
+    for(let i = 0; i < flakes.length; i++){
       flakes[i].update(delta);
       flakes[i].draw(ctx);
     }
@@ -69,20 +72,3 @@
   }
   requestAnimationFrame(loop);
 })();
-
-// Sidebar toggle
-const toggleBtn = document.getElementById('toggleSidebar');
-const sidebar = document.getElementById('sidebar');
-
-toggleBtn.addEventListener('click', () => {
-  sidebar.classList.toggle('active');
-});
-
-// Close sidebar on link click (mobile)
-document.querySelectorAll('.sidebar-item').forEach(link => {
-  link.addEventListener('click', () => {
-    if (window.innerWidth <= 900) {
-      sidebar.classList.remove('active');
-    }
-  });
-});
