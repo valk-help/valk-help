@@ -1,1 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Valk Help — Documentation</title>
 
+  <!-- Fonts / icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Particles container (optional) -->
+  <div id="particles-js" aria-hidden="true"></div>
+
+  <!-- Snow overlay -->
+  <div id="snow-canvas-wrap" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="/">
+        <div class="logo" aria-hidden="true">V</div>
+        <div class="brand-text">
+          <div class="brand-title">Valk</div>
+          <div class="brand-sub">Services</div>
+        </div>
+      </a>
+
+      <div class="pill-nav">
+        <a class="active" href="/">Home</a>
+        <a href="https://valk.wtf" target="_blank" rel="noopener">Store</a>
+        <a href="https://valk.wtf/status" target="_blank" rel="noopener">Status</a>
+      </div>
+
+      <div class="nav-actions">
+        <a class="btn-round" href="#products">Products</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" role="banner">
+    <div class="hero-text">
+      <h1><span class="valk-gradient">Valk</span></h1>
+      <p class="lead">Your product guide hub. Clear, fast, purple — everything you need to get started.</p>
+      <p class="lead small">Click the big image to visit the store</p>
+      <div style="margin-top:18px;">
+        <a class="btn-primary btn-round big" href="https://valk.wtf" target="_blank" rel="noopener">Visit Store</a>
+      </div>
+    </div>
+
+    <a class="hero-art" href="https://valk.wtf" target="_blank" rel="noopener" aria-label="Visit store">
+      <!-- hero image -->
+      <img src="https://imagedelivery.net/HL_Fwm__tlvUGLZF2p74xw/c81d5ef2-c32c-48c2-0582-3458edb3e400/public" alt="Valk artwork">
+      <div class="hero-logo">VALK</div>
+    </a>
+  </header>
+
+  <!-- PRODUCTS -->
+  <main class="site-wrap">
+    <section id="products" class="products-shell" aria-label="Products">
+      <div class="products-top">
+        <div class="filter-pill">
+          <button class="btn-primary">ALL PRODUCTS</button>
+          <div style="display:flex;gap:0.5rem;margin-left:0.75rem;">
+            <span class="alpha-pill">A</span>
+            <span class="alpha-pill">B</span>
+            <span class="alpha-pill">C</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="products-grid">
+        <article class="product-card">
+          <a href="/valkexe/" class="card-link">
+            <div class="card-media"><img src="https://imagedelivery.net/HL_Fwm__tlvUGLZF2p74xw/f9a071ea-7b64-44e6-9633-851682e12700/public" alt="ValkExe"></div>
+            <div class="card-body">
+              <h3 class="card-title">ValkExe</h3>
+              <p class="card-sub">Product tutorial here</p>
+              <div class="card-foot">
+                <span class="price">Guide</span>
+                <button class="btn-round small">Open</button>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <article class="product-card">
+          <a href="/Crusader/" class="card-link">
+            <div class="card-media"><img src="https://imagedelivery.net/HL_Fwm__tlvUGLZF2p74xw/f9a071ea-7b64-44e6-9633-851682e12700/public" alt="Crusader"></div>
+            <div class="card-body">
+              <h3 class="card-title">Crusader</h3>
+              <p class="card-sub">Product tutorial here</p>
+              <div class="card-foot">
+                <span class="price">Guide</span>
+                <button class="btn-round small">Open</button>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <article class="product-card">
+          <a href="/vega/" class="card-link">
+            <div class="card-media"><img src="https://imagedelivery.net/HL_Fwm__tlvUGLZF2p74xw/f9a071ea-7b64-44e6-9633-851682e12700/public" alt="Vega"></div>
+            <div class="card-body">
+              <h3 class="card-title">Vega</h3>
+              <p class="card-sub">Product tutorial here</p>
+              <div class="card-foot">
+                <span class="price">Guide</span>
+                <button class="btn-round small">Open</button>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <article class="product-card">
+          <a href="/veax/" class="card-link">
+            <div class="card-media"><img src="https://imagedelivery.net/HL_Fwm__tlvUGLZF2p74xw/f9a071ea-7b64-44e6-9633-851682e12700/public" alt="Veax"></div>
+            <div class="card-body">
+              <h3 class="card-title">Veax</h3>
+              <p class="card-sub">Product tutorial here</p>
+              <div class="card-foot">
+                <span class="price">Guide</span>
+                <button class="btn-round small">Open</button>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <article class="product-card">
+          <a href="/valk/" class="card-link">
+            <div class="card-media"><img src="https://imagedelivery.net/HL_Fwm__tlvUGLZF2p74xw/f9a071ea-7b64-44e6-9633-851682e12700/public" alt="Valk"></div>
+            <div class="card-body">
+              <h3 class="card-title">Valk</h3>
+              <p class="card-sub">Product tutorial here</p>
+              <div class="card-foot">
+                <span class="price">Guide</span>
+                <button class="btn-round small">Open</button>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <article class="product-card">
+          <a href="/void/" class="card-link">
+            <div class="card-media"><img src="https://imagedelivery.net/HL_Fwm__tlvUGLZF2p74xw/f9a071ea-7b64-44e6-9633-851682e12700/public" alt="Void"></div>
+            <div class="card-body">
+              <h3 class="card-title">Void</h3>
+              <p class="card-sub">Product tutorial here</p>
+              <div class="card-foot">
+                <span class="price">Guide</span>
+                <button class="btn-round small">Open</button>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <article class="product-card">
+          <a href="/rr/" class="card-link">
+            <div class="card-media"><img src="https://imagedelivery.net/HL_Fwm__tlvUGLZF2p74xw/f9a071ea-7b64-44e6-9633-851682e12700/public" alt="RR"></div>
+            <div class="card-body">
+              <h3 class="card-title">RR</h3>
+              <p class="card-sub">Product tutorial here</p>
+              <div class="card-foot">
+                <span class="price">Guide</span>
+                <button class="btn-round small">Open</button>
+              </div>
+            </div>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="site-wrap">
+        <p>© <strong>Valk</strong> — Help & Guides</p>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
