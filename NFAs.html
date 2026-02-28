@@ -1,1 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NFAs Guide — VALK.WTF</title>
+  <style>
+    :root {
+      --bg: #0a0012;
+      --purple: #a020f0;
+      --purple-glow: #c26eff;
+      --text: #e0ccff;
+      --border: 4px solid #c26eff;
+    }
 
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Courier New', Courier, monospace;
+      min-height: 100vh;
+      overflow-y: auto;
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(160,32,240,0.08) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(160,32,240,0.06) 0%, transparent 40%);
+      background-size: cover;
+      position: relative;
+    }
+
+    /* SNOW */
+    #snow-canvas-wrap {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      pointer-events: none;
+    }
+
+    .layout { 
+      display: flex; 
+      min-height: 100vh; 
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: 240px;
+      background: rgba(10, 0, 18, 0.97);
+      border-right: var(--border);
+      padding: 40px 0 20px;
+      overflow-y: auto;
+      box-shadow: 8px 0 35px rgba(160,32,240,0.3);
+      z-index: 20;
+    }
+    .sidebar-item {
+      display: block;
+      padding: 14px 30px;
+      color: #d0aaff;
+      font-size: 1.12rem;
+      font-weight: bold;
+      text-transform: lowercase;
+      text-shadow: 0 0 8px rgba(160,32,240,0.6);
+      transition: all 0.25s;
+    }
+    .sidebar-item.home {
+      color: var(--purple-glow);
+      font-size: 1.28rem;
+      text-align: center;
+      margin-bottom: 35px;
+      text-shadow: 0 0 20px #c26eff;
+    }
+    .sidebar-item:hover {
+      color: white;
+      background: rgba(160,32,240,0.18);
+      padding-left: 42px;
+      text-shadow: 0 0 18px #c26eff;
+    }
+
+    /* MAIN */
+    .main {
+      flex: 1;
+      padding: 40px 30px;
+      position: relative;
+      z-index: 15;
+    }
+
+    /* BIG GLOWING BOX */
+    .guide-box {
+      width: 100%;
+      max-width: 1250px;
+      background: #0f051a;
+      border: var(--border);
+      border-radius: 22px;
+      padding: 60px 80px;
+      box-shadow: 
+        0 0 70px #c26eff,
+        0 0 140px rgba(194,110,255,0.75),
+        inset 0 0 90px rgba(160,32,240,0.4);
+      margin: 30px auto;
+    }
+
+    .guide-title {
+      font-size: 5.8rem;
+      font-weight: 900;
+      color: var(--purple-glow);
+      text-shadow: 0 0 30px #c26eff, 0 0 60px #a020f0;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    /* YOUTUBE BUTTON */
+    .download-section {
+      text-align: center;
+      margin: 40px 0 60px;
+    }
+    .mega-link {
+      display: inline-block;
+      font-size: 2.1rem;
+      color: #fff;
+      background: rgba(160,32,240,0.15);
+      padding: 22px 55px;
+      border: 3px solid #c26eff;
+      border-radius: 14px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .mega-link:hover {
+      background: rgba(194,110,255,0.25);
+      transform: scale(1.05);
+      box-shadow: 0 0 45px #c26eff;
+    }
+    .click-me {
+      margin-top: 12px;
+      font-size: 1.1rem;
+      color: #b38eff;
+      font-style: italic;
+    }
+
+    /* INSTRUCTIONS */
+    .instructions {
+      font-size: 1.5rem;
+      line-height: 1.95;
+      color: #e0e0ff;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .instructions h2 {
+      font-size: 2.8rem;
+      color: #c26eff;
+      text-shadow: 0 0 20px #c26eff;
+      margin: 55px 0 25px;
+      text-align: center;
+    }
+
+    .instructions ol {
+      margin-left: 30px;
+      margin-top: 15px;
+    }
+
+    .instructions li {
+      margin-bottom: 18px;
+    }
+
+    .instructions strong {
+      color: #fff;
+    }
+
+    .instructions a {
+      color: #c26eff;
+      text-decoration: underline;
+    }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      .guide-box { padding: 50px 35px; margin: 20px auto; }
+      .guide-title { font-size: 4.2rem; }
+      .mega-link { font-size: 1.7rem; padding: 18px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SNOW -->
+  <div id="snow-canvas-wrap" aria-hidden="true"></div>
+
+  <div class="layout">
+    
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-item home">homepage (icon)</div>
+      <a href="https://valk.help/valkexe" class="sidebar-item">valkexe</a>
+      <a href="https://valk.help/Crusader" class="sidebar-item">crusader</a>
+      <a href="https://valk.help/vega" class="sidebar-item">vega</a>
+      <a href="https://valk.help/veax" class="sidebar-item">veax</a>
+      <a href="https://valk.help/valkChams" class="sidebar-item">valk_chams</a>
+      <a href="https://valk.help/void" class="sidebar-item">void</a>
+      <a href="https://valk.help/NFAs" class="sidebar-item">nfas</a>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+      <div class="guide-box">
+
+        <h1 class="guide-title">NFAs</h1>
+
+        <!-- YOUTUBE VIDEO BUTTON -->
+        <div class="download-section">
+          <a href="https://www.youtube.com/results?search_query=ValkYT38" 
+             target="_blank" class="mega-link">
+            youtube video
+          </a>
+          <div class="click-me">click me</div>
+        </div>
+
+        <div class="instructions">
+
+          <h2>FIXES (video does not show)</h2>
+          <h2>LINKING</h2>
+          <ol>
+            <li>make sure you are on ubisoft help cases website! (needed for linking)</li>
+            <li>if the account is already linked contact staff.</li>
+            <li>once it logged in browser ur xbox account has been linked to the account</li>
+          </ol>
+
+          <h2>XBOX APP fixes</h2>
+          <ol>
+            <li>make sure you enabled extension as shown in the youtube video.<br>
+            If it still does not log you in click ur xbox profile on the app → click settings → turn off both ubisoft connect extensions (with ubisoft app closed) → restart ur pc → then re open xbox app and turn them back on → enable extension and open ubisoft and you will be logged in!</li>
+            <li>Ubisoft app must be closed when enabling or disabling extensions!</li>
+          </ol>
+
+          <p style="margin-top:60px; font-size:1.7rem; text-align:center;">
+            <strong>Enjoy and leave a vouch!</strong><br>
+            this is easy to do but looks hard on paper!
+          </p>
+
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Snow canvas
+    (function(){
+      const SNOW_COUNT = 160;
+      const SNOW_SPEED = 1.0;
+      const WIND = 0.12;
+      const wrap = document.getElementById('snow-canvas-wrap');
+      if (!wrap) return;
+
+      const canvas = document.createElement('canvas');
+      canvas.style.width = '100%';
+      canvas.style.height = '100%';
+      canvas.style.position = 'absolute';
+      canvas.style.left = '0';
+      canvas.style.top = '0';
+      canvas.style.zIndex = '60';
+      canvas.style.pointerEvents = 'none';
+      wrap.appendChild(canvas);
+
+      const ctx = canvas.getContext('2d');
+      let width = 0, height = 0, dpi = window.devicePixelRatio || 1;
+
+      function resize(){
+        dpi = window.devicePixelRatio || 1;
+        width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+        canvas.width = Math.floor(width * dpi);
+        canvas.height = Math.floor(height * dpi);
+        canvas.style.width = width + 'px';
+        canvas.style.height = height + 'px';
+        ctx.setTransform(dpi, 0, 0, dpi, 0, 0);
+      }
+
+      window.addEventListener('resize', resize, {passive: true});
+      resize();
+
+      function Snowflake(){ this.reset(); }
+      Snowflake.prototype.reset = function(){
+        this.x = Math.random()*width;
+        this.y = Math.random()*-height;
+        this.radius = 0.8 + Math.random()*3.6;
+        this.speed = (0.25 + Math.random()*1.1) * SNOW_SPEED;
+        this.angle = Math.random()*Math.PI*2;
+        this.opacity = 0.12 + Math.random()*0.9;
+        this.wind = WIND*(0.2 + Math.random()*1.1);
+      };
+      Snowflake.prototype.update = function(delta){
+        this.y += (this.speed + Math.sin(this.angle)*0.3) * delta;
+        this.x += this.wind + Math.cos(this.angle)*0.25;
+        this.angle += 0.008*(0.5 + Math.random()*0.7);
+        if(this.y > height+25 || this.x < -60 || this.x > width+60) this.reset();
+      };
+      Snowflake.prototype.draw = function(ctx){
+        ctx.beginPath();
+        ctx.fillStyle = 'rgba(255,255,255,'+this.opacity+')';
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2);
+        ctx.fill();
+      };
+
+      const flakes = [];
+      for(let i = 0; i < SNOW_COUNT; i++) flakes.push(new Snowflake());
+
+      let last = performance.now();
+      function loop(now){
+        const delta = Math.min(1.5, (now-last)/16.66);
+        last = now;
+        ctx.clearRect(0,0,width,height);
+        for(let i = 0; i < flakes.length; i++){
+          flakes[i].update(delta);
+          flakes[i].draw(ctx);
+        }
+        requestAnimationFrame(loop);
+      }
+      requestAnimationFrame(loop);
+    })();
+  </script>
+</body>
+</html>
