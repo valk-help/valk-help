@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vega guide — VALK.WTF</title>
+  <title>Vega Guide — VALK.WTF</title>
   <style>
     :root {
       --bg: #0a0012;
@@ -13,11 +13,7 @@
       --border: 4px solid #c26eff;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin:0; padding:0; box-sizing:border-box; }
 
     body {
       background: var(--bg);
@@ -40,12 +36,9 @@
       pointer-events: none;
     }
 
-    .layout {
-      display: flex;
-      height: 100vh;
-    }
+    .layout { display: flex; height: 100vh; }
 
-    /* SIDEBAR - same as homepage */
+    /* SIDEBAR (same as homepage) */
     .sidebar {
       width: 240px;
       background: rgba(10, 0, 18, 0.97);
@@ -55,7 +48,6 @@
       box-shadow: 8px 0 35px rgba(160,32,240,0.3);
       z-index: 20;
     }
-
     .sidebar-item {
       display: block;
       padding: 14px 30px;
@@ -66,7 +58,6 @@
       text-shadow: 0 0 8px rgba(160,32,240,0.6);
       transition: all 0.25s;
     }
-
     .sidebar-item.home {
       color: var(--purple-glow);
       font-size: 1.28rem;
@@ -74,7 +65,6 @@
       margin-bottom: 35px;
       text-shadow: 0 0 20px #c26eff;
     }
-
     .sidebar-item:hover {
       color: white;
       background: rgba(160,32,240,0.18);
@@ -82,7 +72,7 @@
       text-shadow: 0 0 18px #c26eff;
     }
 
-    /* MAIN CONTENT */
+    /* MAIN */
     .main {
       flex: 1;
       display: flex;
@@ -93,54 +83,84 @@
       z-index: 15;
     }
 
-    /* BIG GLOWING BOX - longer, wider, taller, stronger glow */
+    /* BIG GLOWING BOX - wider & taller */
     .guide-box {
       width: 100%;
-      max-width: 1180px;
+      max-width: 1250px;
       background: #0f051a;
       border: var(--border);
       border-radius: 22px;
-      padding: 80px 95px;
+      padding: 80px 100px;
       box-shadow: 
-        0 0 60px #c26eff,
-        0 0 120px rgba(194,110,255,0.7),
-        inset 0 0 80px rgba(160,32,240,0.35);
+        0 0 70px #c26eff,
+        0 0 140px rgba(194,110,255,0.75),
+        inset 0 0 90px rgba(160,32,240,0.4);
       margin-top: 5vh;
     }
 
     .guide-title {
-      font-size: 5.2rem;
+      font-size: 5.8rem;
       font-weight: 900;
       color: var(--purple-glow);
-      text-shadow: 
-        0 0 25px #c26eff,
-        0 0 50px #a020f0,
-        0 0 80px #7d1ab8;
+      text-shadow: 0 0 30px #c26eff, 0 0 60px #a020f0;
       text-align: center;
-      margin-bottom: 50px;
-      line-height: 1;
+      margin-bottom: 40px;
+    }
+
+    .mega-link {
+      display: block;
+      text-align: center;
+      font-size: 1.8rem;
+      color: #fff;
+      background: rgba(160,32,240,0.15);
+      padding: 18px 40px;
+      border: 3px solid #c26eff;
+      border-radius: 12px;
+      margin: 30px auto;
+      max-width: 620px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .mega-link:hover {
+      background: rgba(194,110,255,0.25);
+      transform: scale(1.03);
+      box-shadow: 0 0 40px #c26eff;
+    }
+
+    .fixes-title {
+      font-size: 2.8rem;
+      color: #c26eff;
+      text-shadow: 0 0 20px #c26eff;
+      margin: 50px 0 25px;
+      text-align: center;
+    }
+
+    .system-image {
+      display: block;
+      margin: 0 auto 40px;
+      max-width: 100%;
+      border: 3px solid #c26eff;
+      border-radius: 12px;
+      box-shadow: 0 0 50px rgba(194,110,255,0.6);
     }
 
     .guide-content {
-      font-size: 1.45rem;
-      line-height: 1.85;
+      font-size: 1.5rem;
+      line-height: 1.9;
       color: #e0e0ff;
-      max-width: 1050px;
+      max-width: 1100px;
       margin: 0 auto;
-      text-align: left;
     }
 
-    .guide-content p {
-      margin-bottom: 1.6em;
+    .guide-content a {
+      color: #c26eff;
+      text-decoration: underline;
     }
 
     /* MOBILE */
     @media (max-width: 900px) {
-      .layout { flex-direction: column; }
-      .sidebar { width: 100%; height: auto; padding: 15px 0; border-right: none; border-bottom: var(--border); }
-      .sidebar-item { display: inline-block; padding: 16px 28px; }
-      .guide-box { padding: 50px 40px; margin-top: 10vh; }
-      .guide-title { font-size: 3.8rem; }
+      .guide-box { padding: 50px 40px; margin-top: 8vh; }
+      .guide-title { font-size: 4.2rem; }
     }
   </style>
 </head>
@@ -163,24 +183,41 @@
       <a href="https://valk.help/NFAs" class="sidebar-item">nfas</a>
     </aside>
 
-    <!-- MAIN - BIG GLOWING BOX -->
+    <!-- MAIN CONTENT -->
     <main class="main">
       <div class="guide-box">
-        <!-- CHANGE THIS TO YOUR PRODUCT NAME / TITLE -->
-        <h1 class="guide-title">valk.wtf/product/vega:</h1>
-<img 
-  src="https://image.delivery/page/vhtxvdk" 
-  alt="Image description"
-  style="max-width: 100%; height: auto;"
->
-        <!-- REPLACE EVERYTHING BELOW WITH YOUR GUIDE TEXT -->
+
+        <h1 class="guide-title">Vega</h1>
+
+        <!-- Mega Link -->
+        <a href="https://mega.nz/folder/OAkhFCbJ#X0bbzcy5PFIiOJOWnuQyog" 
+           target="_blank" class="mega-link">
+          Vega Download → mega.nz/folder/OAkhFCbJ#X0bbzcy5PFIiOJOWnuQyog
+        </a>
+
+        <!-- FIXES Section -->
+        <div class="fixes-title">FIXES</div>
+        
+        <!-- System Information Image -->
+        <img src="https://fast.image.delivery/vhtxvdk.png" 
+             alt="System Information Fixes" 
+             class="system-image">
+
         <div class="guide-content">
-          <p>FIXES:</p>
-          <p>1. https://image.delivery/page/vhtxvdk  </p>
-          <p>2. !</p>
-          <p> <p>
-          <!-- you can add as many &lt;p&gt; or other HTML as you want -->
+          <p>For any issues please download, extract and run the .bat file from:</p>
+          <p>
+            <a href="https://www.techpowerup.com/download/visual-c-redistributable-runtime-package-all-in-one/" target="_blank">
+              https://www.techpowerup.com/download/visual-c-redistributable-runtime-package-all-in-one/
+            </a>
+          </p>
+          <p>
+            <a href="https://www.sordum.org/9480/defender-control-v2-1/" target="_blank">
+              https://www.sordum.org/9480/defender-control-v2-1/
+            </a>
+          </p>
+          <p><strong>Contact support if any issues still happen after doing that.</strong></p>
         </div>
+
       </div>
     </main>
   </div>
