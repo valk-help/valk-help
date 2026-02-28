@@ -1,4 +1,4 @@
-// Snow canvas - Fixed for your current design
+// Snow canvas - Fixed & working
 (function(){
   const SNOW_COUNT = 160;
   const SNOW_SPEED = 1.0;
