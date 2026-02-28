@@ -1,238 +1,259 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Valk Help — Documentation</title>
-
-  <!-- Fonts / icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YOUR PRODUCT GUIDE — VALK.WTF</title>
   <style>
     :root {
-      --purple: #a855f7;
-      --purple-dark: #9333ea;
-      --bg: #0f0f1a;
-      --text: #e0e0ff;
-      --card: #1a1a2e;
+      --bg: #0a0012;
+      --purple: #a020f0;
+      --purple-glow: #c26eff;
+      --text: #e0ccff;
+      --border: 4px solid #c26eff;
     }
-    * { margin:0; padding:0; box-sizing:border-box; }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Inter', system-ui, sans-serif;
       background: var(--bg);
       color: var(--text);
-      min-height: 100vh;
-      line-height: 1.6;
+      font-family: 'Courier New', Courier, monospace;
+      height: 100vh;
+      overflow: hidden;
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(160,32,240,0.08) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(160,32,240,0.06) 0%, transparent 40%);
+      background-size: cover;
+      position: relative;
     }
-    .nav {
-      background: rgba(10,10,20,0.8);
-      backdrop-filter: blur(8px);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid #333;
+
+    /* SNOW */
+    #snow-canvas-wrap {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      pointer-events: none;
     }
-    .nav-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem 1.5rem;
+
+    .layout {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      height: 100vh;
     }
-    .brand {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
+
+    /* SIDEBAR - same as homepage */
+    .sidebar {
+      width: 240px;
+      background: rgba(10, 0, 18, 0.97);
+      border-right: var(--border);
+      padding: 40px 0 20px;
+      overflow-y: auto;
+      box-shadow: 8px 0 35px rgba(160,32,240,0.3);
+      z-index: 20;
+    }
+
+    .sidebar-item {
+      display: block;
+      padding: 14px 30px;
+      color: #d0aaff;
+      font-size: 1.12rem;
+      font-weight: bold;
+      text-transform: lowercase;
+      text-shadow: 0 0 8px rgba(160,32,240,0.6);
+      transition: all 0.25s;
+    }
+
+    .sidebar-item.home {
+      color: var(--purple-glow);
+      font-size: 1.28rem;
+      text-align: center;
+      margin-bottom: 35px;
+      text-shadow: 0 0 20px #c26eff;
+    }
+
+    .sidebar-item:hover {
       color: white;
+      background: rgba(160,32,240,0.18);
+      padding-left: 42px;
+      text-shadow: 0 0 18px #c26eff;
     }
-    .logo {
-      width: 36px;
-      height: 36px;
-      background: var(--purple);
-      border-radius: 8px;
+
+    /* MAIN CONTENT */
+    .main {
+      flex: 1;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: bold;
-      margin-right: 0.75rem;
-    }
-    .brand-title { font-size: 1.4rem; font-weight: 700; }
-    .brand-sub { font-size: 0.9rem; opacity: 0.7; }
-
-    .hamburger {
-      font-size: 1.8rem;
-      cursor: pointer;
-      color: var(--purple);
-      display: none;
+      padding: 40px;
+      position: relative;
+      z-index: 15;
     }
 
-    .sidebar {
-      width: 260px;
-      background: var(--card);
-      border-right: 1px solid #333;
-      height: calc(100vh - 70px);
-      position: fixed;
-      top: 70px;
-      left: 0;
-      overflow-y: auto;
-      transition: transform 0.3s ease;
-      z-index: 90;
-    }
-    .sidebar.hidden {
-      transform: translateX(-100%);
-    }
-    .sidebar-list {
-      padding: 1.5rem 0;
-    }
-    .sidebar-item {
-      display: block;
-      padding: 1rem 1.5rem;
-      color: var(--text);
-      text-decoration: none;
-      border-left: 3px solid transparent;
-      transition: all 0.2s;
-    }
-    .sidebar-item:hover,
-    .sidebar-item:focus {
-      background: rgba(168,85,247,0.12);
-      border-left-color: var(--purple);
-      color: white;
-    }
-    .sidebar-item.active {
-      background: rgba(168,85,247,0.2);
-      border-left-color: var(--purple);
-      font-weight: 600;
+    /* BIG GLOWING BOX - longer, wider, taller, stronger glow */
+    .guide-box {
+      width: 100%;
+      max-width: 1180px;
+      background: #0f051a;
+      border: var(--border);
+      border-radius: 22px;
+      padding: 80px 95px;
+      box-shadow: 
+        0 0 60px #c26eff,
+        0 0 120px rgba(194,110,255,0.7),
+        inset 0 0 80px rgba(160,32,240,0.35);
+      margin-top: 5vh;
     }
 
-    .main-content {
-      margin-left: 260px;
-      padding: 2rem 3rem;
-      max-width: 900px;
-    }
-
-    .hero {
+    .guide-title {
+      font-size: 5.2rem;
+      font-weight: 900;
+      color: var(--purple-glow);
+      text-shadow: 
+        0 0 25px #c26eff,
+        0 0 50px #a020f0,
+        0 0 80px #7d1ab8;
       text-align: center;
-      padding: 4rem 1rem 6rem;
-      background: linear-gradient(to bottom, #1a0033, transparent);
-    }
-    .valk-gradient {
-      background: linear-gradient(90deg, #c084fc, #a855f7, #7e22ce);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: 800;
-      font-size: 4.5rem;
-    }
-    .lead { font-size: 1.4rem; opacity: 0.9; margin: 1rem 0; }
-    .btn-primary {
-      background: var(--purple);
-      color: white;
-      border: none;
-      padding: 0.9rem 2rem;
-      border-radius: 50px;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: all 0.2s;
-    }
-    .btn-primary:hover { background: var(--purple-dark); transform: translateY(-2px); }
-
-    .products-shell { padding: 1rem 0; }
-    footer {
-      text-align: center;
-      padding: 3rem 1rem;
-      opacity: 0.6;
-      font-size: 0.95rem;
-      border-top: 1px solid #333;
-      margin-top: 4rem;
+      margin-bottom: 50px;
+      line-height: 1;
     }
 
+    .guide-content {
+      font-size: 1.45rem;
+      line-height: 1.85;
+      color: #e0e0ff;
+      max-width: 1050px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .guide-content p {
+      margin-bottom: 1.6em;
+    }
+
+    /* MOBILE */
     @media (max-width: 900px) {
-      .hamburger { display: block; }
-      .sidebar {
-        transform: translateX(-100%);
-      }
-      .sidebar.active {
-        transform: translateX(0);
-      }
-      .main-content {
-        margin-left: 0;
-        padding: 1.5rem;
-      }
+      .layout { flex-direction: column; }
+      .sidebar { width: 100%; height: auto; padding: 15px 0; border-right: none; border-bottom: var(--border); }
+      .sidebar-item { display: inline-block; padding: 16px 28px; }
+      .guide-box { padding: 50px 40px; margin-top: 10vh; }
+      .guide-title { font-size: 3.8rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="nav">
-    <div class="nav-inner">
-      <a class="brand" href="/">
-        <div class="logo">V</div>
-        <div class="brand-text">
-          <div class="brand-title">Valk</div>
-          <div class="brand-sub">Services</div>
+  <!-- SNOW -->
+  <div id="snow-canvas-wrap" aria-hidden="true"></div>
+
+  <div class="layout">
+    
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-item home">homepage (icon)</div>
+      <a href="https://valk.help/valkexe" class="sidebar-item">valkexe</a>
+      <a href="https://valk.help/Crusader" class="sidebar-item">crusader</a>
+      <a href="https://valk.help/vega" class="sidebar-item">vega</a>
+      <a href="https://valk.help/veax" class="sidebar-item">veax</a>
+      <a href="https://valk.help/valkChams" class="sidebar-item">valk_chams</a>
+      <a href="https://valk.help/void" class="sidebar-item">void</a>
+      <a href="https://valk.help/NFAs" class="sidebar-item">nfas</a>
+    </aside>
+
+    <!-- MAIN - BIG GLOWING BOX -->
+    <main class="main">
+      <div class="guide-box">
+        <!-- CHANGE THIS TO YOUR PRODUCT NAME / TITLE -->
+        <h1 class="guide-title">YOUR PRODUCT NAME HERE</h1>
+
+        <!-- REPLACE EVERYTHING BELOW WITH YOUR GUIDE TEXT -->
+        <div class="guide-content">
+          <p>my text here</p>
+          <p>paste your full guide, instructions, features, etc. here...</p>
+          <!-- you can add as many &lt;p&gt; or other HTML as you want -->
         </div>
-      </a>
-
-      <i class="fas fa-bars hamburger" id="toggleSidebar"></i>
-    </div>
-  </nav>
-
-  <!-- SIDEBAR -->
-  <aside class="sidebar" id="sidebar">
-    <div class="sidebar-list">
-      <a href="/valkexe/" class="sidebar-item">ValkExe Guide</a>
-      <a href="/Crusader/" class="sidebar-item">Crusader Guide</a>
-      <a href="/vega/" class="sidebar-item">Vega Guide</a>
-      <a href="/veax/" class="sidebar-item">Veax Guide</a>
-      <a href="/valk/" class="sidebar-item">Valk Guide</a>
-      <a href="/void/" class="sidebar-item">Void Guide</a>
-      <a href="/rr/" class="sidebar-item">RR Guide</a>
-    </div>
-  </aside>
-
-  <!-- MAIN CONTENT -->
-  <main class="main-content">
-    <header class="hero" role="banner">
-      <h1><span class="valk-gradient">Valk</span></h1>
-      <p class="lead">Your product guide hub. Clear, fast, purple — everything you need to get started.</p>
-      <p class="lead small">Select a product from the sidebar to view its guide.</p>
-      <div style="margin-top:2rem;">
-        <a class="btn-primary" href="https://valk.wtf" target="_blank" rel="noopener">Visit Store</a>
       </div>
-    </header>
-
-    <section class="products-shell" aria-label="Products">
-      <p style="text-align:center; opacity:0.7; font-style:italic;">
-        ← Click the menu icon (≡) in the top right on mobile to open the guides list
-      </p>
-      <!-- You can add actual guide content here later when someone clicks a sidebar link -->
-    </section>
-
-    <footer>
-      <p>© <strong>Valk</strong> — Help & Guides</p>
-    </footer>
-  </main>
+    </main>
+  </div>
 
   <script>
-    const toggleBtn = document.getElementById('toggleSidebar');
-    const sidebar = document.getElementById('sidebar');
+    // Snow canvas
+    (function(){
+      const SNOW_COUNT = 160;
+      const SNOW_SPEED = 1.0;
+      const WIND = 0.12;
+      const wrap = document.getElementById('snow-canvas-wrap');
+      if (!wrap) return;
 
-    toggleBtn.addEventListener('click', () => {
-      sidebar.classList.toggle('active');
-    });
+      const canvas = document.createElement('canvas');
+      canvas.style.width = '100%';
+      canvas.style.height = '100%';
+      canvas.style.position = 'absolute';
+      canvas.style.left = '0';
+      canvas.style.top = '0';
+      canvas.style.zIndex = '60';
+      canvas.style.pointerEvents = 'none';
+      wrap.appendChild(canvas);
 
-    // Optional: close sidebar when clicking a link (on mobile)
-    document.querySelectorAll('.sidebar-item').forEach(link => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth <= 900) {
-          sidebar.classList.remove('active');
+      const ctx = canvas.getContext('2d');
+      let width = 0, height = 0, dpi = window.devicePixelRatio || 1;
+
+      function resize(){
+        dpi = window.devicePixelRatio || 1;
+        width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+        canvas.width = Math.floor(width * dpi);
+        canvas.height = Math.floor(height * dpi);
+        canvas.style.width = width + 'px';
+        canvas.style.height = height + 'px';
+        ctx.setTransform(dpi, 0, 0, dpi, 0, 0);
+      }
+
+      window.addEventListener('resize', resize, {passive: true});
+      resize();
+
+      function Snowflake(){ this.reset(); }
+      Snowflake.prototype.reset = function(){
+        this.x = Math.random()*width;
+        this.y = Math.random()*-height;
+        this.radius = 0.8 + Math.random()*3.6;
+        this.speed = (0.25 + Math.random()*1.1) * SNOW_SPEED;
+        this.angle = Math.random()*Math.PI*2;
+        this.opacity = 0.12 + Math.random()*0.9;
+        this.wind = WIND*(0.2 + Math.random()*1.1);
+      };
+      Snowflake.prototype.update = function(delta){
+        this.y += (this.speed + Math.sin(this.angle)*0.3) * delta;
+        this.x += this.wind + Math.cos(this.angle)*0.25;
+        this.angle += 0.008*(0.5 + Math.random()*0.7);
+        if(this.y > height+25 || this.x < -60 || this.x > width+60) this.reset();
+      };
+      Snowflake.prototype.draw = function(ctx){
+        ctx.beginPath();
+        ctx.fillStyle = 'rgba(255,255,255,'+this.opacity+')';
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2);
+        ctx.fill();
+      };
+
+      const flakes = [];
+      for(let i = 0; i < SNOW_COUNT; i++) flakes.push(new Snowflake());
+
+      let last = performance.now();
+      function loop(now){
+        const delta = Math.min(1.5, (now-last)/16.66);
+        last = now;
+        ctx.clearRect(0,0,width,height);
+        for(let i = 0; i < flakes.length; i++){
+          flakes[i].update(delta);
+          flakes[i].draw(ctx);
         }
-      });
-    });
+        requestAnimationFrame(loop);
+      }
+      requestAnimationFrame(loop);
+    })();
   </script>
 </body>
 </html>
