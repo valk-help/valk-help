@@ -1,4 +1,4 @@
-// Snow canvas - Fixed & working
+/* script.js */
 (function(){
   const SNOW_COUNT = 160;
   const SNOW_SPEED = 1.0;
