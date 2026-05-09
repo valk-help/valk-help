@@ -1,3 +1,4 @@
+
 /*
   Enhanced Valk Guide Website Styles
   This stylesheet defines a dark, neon-inspired aesthetic for the Valk GUIDBOOK website.
@@ -86,6 +87,7 @@ body::after {
   text-transform: lowercase;
   text-shadow: 0 0 6px rgba(194,110,255,0.6);
   transition: all 0.25s ease;
+  text-decoration: none;
 }
 
 .sidebar-item.home {
@@ -120,14 +122,15 @@ body::after {
   width: 100%;
   max-width: 900px;
   background: var(--box-bg);
-  border: var(--border);
+  /* Remove visible border around the hero card */
+  border: none;
   border-radius: 18px;
   padding: 48px 60px;
   margin-top: 8vh;
-  box-shadow: 
-    0 0 60px var(--accent),
-    0 0 120px rgba(194,110,255,0.45),
-    inset 0 0 40px rgba(160,32,240,0.35);
+  box-shadow:
+    0 0 80px rgba(194,110,255,0.6),
+    0 0 160px rgba(194,110,255,0.4),
+    inset 0 0 40px rgba(160,32,240,0.3);
   transition: transform 0.3s ease, box-shadow 0.4s ease;
   will-change: transform;
 }
@@ -223,10 +226,11 @@ body::after {
   width: 260px;
   height: 260px;
   object-fit: contain;
-  border: 4px solid var(--accent);
+  /* Remove border and box around the logo for a cleaner look */
+  border: none;
   border-radius: 14px;
-  background: rgba(0,0,0,0.5);
-  padding: 20px;
+  background: none;
+  padding: 0;
   filter: drop-shadow(0 0 40px var(--purple)) drop-shadow(0 0 70px var(--accent-dark));
 }
 
