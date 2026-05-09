@@ -4,16 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Valk GUIDBOOK — VALK.WTF</title>
+  <!-- Import fonts and styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- SNOW -->
+  <!-- Snow overlay -->
   <div id="snow-canvas-wrap" aria-hidden="true"></div>
 
+  <!-- Page structure -->
   <div class="layout">
-    
-    <!-- SIDEBAR -->
+
+    <!-- Sidebar navigation -->
     <aside class="sidebar">
       <div class="sidebar-item home">homepage (icon)</div>
       <a href="https://valk.help/valkexe" class="sidebar-item">valkexe</a>
@@ -25,21 +30,21 @@
       <a href="https://valk.help/nfa" class="sidebar-item">nfa</a>
     </aside>
 
-    <!-- MAIN -->
+    <!-- Main content -->
     <main class="main">
-      
-      <!-- GLOWING PURPLE BOX (now lower + matches screenshot) -->
       <div class="guide-box">
         <div class="box-content">
-          
-          <!-- Text side -->
+
+          <!-- Left text column -->
           <div class="text-area">
             <div class="valk-title">Valk</div>
             <div class="guide-title">GUIDBOOK</div>
             <div class="small-text">valk.wtf</div>
+            <p class="tagline">your ultimate resource for valk mods</p>
+            <button class="cta-button" onclick="location.href='https://valk.help/valkexe'">get started</button>
           </div>
 
-          <!-- Logo side -->
+          <!-- Right logo column -->
           <div class="logo-area">
             <img src="https://imagedelivery.net/HL_Fwm__tlvUGLZF2p74xw/c81d5ef2-c32c-48c2-0582-3458edb3e400/public" 
                  alt="Valk Logo" class="logo">
@@ -47,10 +52,11 @@
 
         </div>
       </div>
-
     </main>
+
   </div>
 
+  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 </html>
