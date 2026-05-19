@@ -1,265 +1,180 @@
-
 /*
-  Enhanced Valk Guide Website Styles
-  This stylesheet defines a dark, neon-inspired aesthetic for the Valk GUIDBOOK website.
-  It introduces modern typography via Google Fonts, vibrant gradients, glassmorphism
-  effects, and a responsive layout that elevates the original design. Interactive
-  elements such as glowing buttons and 3D card tilting are styled here.
-*/
+ * Shared styles for the Valk help pages. These rules define basic
+ * typography, layout and colours so that new pages can be added
+ * consistently without having to repeat the same CSS in every file.
+ */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Fira+Code:wght@400;600&display=swap');
-
-:root {
-  /* Core palette */
-  --bg: #0a0018;
-  --bg-alt: #1a0030;
-  --accent: #c26eff;
-  --accent-dark: #7d1ab8;
-  --purple: #a020f0;
-  --purple-glow: #c26eff;
-  --text-primary: #e0ccff;
-  --text-secondary: #b38eff;
-  --box-bg: #11031d;
-  --border: 3px solid var(--accent);
-}
-
-* {
+/* Global resets */
+html,
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
-  width: 100%;
   height: 100%;
-  font-family: 'Fira Code', monospace;
-  color: var(--text-primary);
-  background: var(--bg);
-  overflow-x: hidden;
-  position: relative;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  background-color: #0f0f0f;
+  color: #fff;
 }
 
-body::before,
-body::after {
-  content: '';
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(194,110,255,0.35) 0%, transparent 70%);
-  filter: blur(140px);
-  z-index: 0;
-}
-body::before {
-  top: -200px;
-  left: -200px;
-}
-body::after {
-  bottom: -200px;
-  right: -200px;
-}
-
-/* Layout */
+/* Layout wrappers */
 .layout {
   display: flex;
   min-height: 100vh;
-  position: relative;
-  z-index: 2;
 }
 
-/* Sidebar */
+/* Sidebar navigation */
 .sidebar {
-  width: 240px;
-  background: rgba(10, 0, 24, 0.95);
-  border-right: var(--border);
-  padding: 45px 0 25px;
-  overflow-y: auto;
-  box-shadow: 8px 0 45px rgba(194,110,255,0.2);
-  backdrop-filter: blur(8px);
+  width: 200px;
+  background-color: #1a1a1a;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .sidebar-item {
-  display: block;
-  padding: 16px 32px;
-  color: var(--text-secondary);
-  font-size: 1.15rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  text-transform: lowercase;
-  text-shadow: 0 0 6px rgba(194,110,255,0.6);
-  transition: all 0.25s ease;
-  text-decoration: none;
-}
-
-.sidebar-item.home {
-  color: var(--accent);
-  font-size: 1.35rem;
-  text-align: center;
-  margin-bottom: 45px;
-  text-shadow: 0 0 25px var(--accent);
-}
-
-.sidebar-item:hover {
+  padding: 10px 20px;
   color: #fff;
-  background: rgba(194,110,255,0.15);
-  padding-left: 46px;
-  text-shadow: 0 0 20px var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
 }
 
-/* Main content */
+/* Special styling for the home link to make it stand out */
+.sidebar-item.home {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+/* Hover and active states for navigation items */
+.sidebar-item:hover,
+.sidebar-item.active {
+  background-color: #333;
+}
+
+/* Main content area */
 .main {
   flex: 1;
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 60px 40px;
-  position: relative;
-  z-index: 3;
+  align-items: center;
+  padding: 40px;
 }
 
-/* Guide box */
+/* Guidebook landing page */
 .guide-box {
-  position: relative;
-  width: 100%;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  padding: 40px;
   max-width: 900px;
-  background: var(--box-bg);
-  /* Remove visible border around the hero card */
-  border: none;
-  border-radius: 18px;
-  padding: 48px 60px;
-  margin-top: 8vh;
-  box-shadow:
-    0 0 80px rgba(194,110,255,0.6),
-    0 0 160px rgba(194,110,255,0.4),
-    inset 0 0 40px rgba(160,32,240,0.3);
-  transition: transform 0.3s ease, box-shadow 0.4s ease;
-  will-change: transform;
-}
-
-.guide-box:hover {
-  box-shadow: 
-    0 0 80px var(--accent),
-    0 0 160px rgba(194,110,255,0.6),
-    inset 0 0 50px rgba(160,32,240,0.45);
+  width: 100%;
 }
 
 .box-content {
   display: flex;
-  align-items: center;
+  flex-direction: row;
   justify-content: space-between;
-  gap: 60px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.text-area {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.valk-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 3.2rem;
-  color: var(--text-primary);
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-
-.guide-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 5.8rem;
+.text-area .valk-title {
+  font-size: 48px;
   font-weight: 800;
-  color: var(--purple-glow);
-  text-shadow: 
-    0 0 25px var(--accent),
-    0 0 50px var(--purple),
-    0 0 80px var(--accent-dark);
-  line-height: 1;
-  margin-bottom: 14px;
+  margin: 0;
 }
 
-.small-text {
-  font-family: 'Fira Code', monospace;
-  font-size: 1.25rem;
-  color: var(--text-secondary);
-  opacity: 0.85;
+.text-area .guide-title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-top: 10px;
 }
 
-.tagline {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.3rem;
-  color: #d9c2f5;
-  margin-top: 20px;
-  letter-spacing: 0.02em;
+.text-area .small-text {
+  font-size: 14px;
+  margin-top: 10px;
+  opacity: 0.7;
 }
 
 .cta-button {
-  display: inline-block;
-  margin-top: 24px;
-  padding: 14px 36px;
-  font-size: 1.35rem;
-  font-family: 'Poppins', sans-serif;
+  margin-top: 20px;
+  padding: 12px 20px;
+  font-size: 16px;
   font-weight: 600;
   color: #fff;
-  background: linear-gradient(45deg, var(--purple), var(--accent));
+  background-color: #ff5c5c;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
-  box-shadow: 0 0 30px rgba(194,110,255,0.45);
-  transition: transform 0.25s ease, box-shadow 0.4s ease, filter 0.3s ease;
+  transition: background-color 0.2s ease;
 }
 
 .cta-button:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 0 45px rgba(194,110,255,0.65), 0 0 90px rgba(194,110,255,0.35);
-  filter: brightness(1.1);
+  background-color: #e04d4d;
 }
 
-/* Logo styling */
-.logo-area {
-  flex-shrink: 0;
+.logo-area .logo {
+  max-width: 150px;
+  height: auto;
+  margin-left: 40px;
+}
+
+/* DMA page styles */
+.dma-container {
+  text-align: center;
+  max-width: 900px;
+  width: 100%;
+}
+
+.dma-container h1 {
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+/* Grid for the round buttons. It uses responsive columns so that the
+ * layout adapts gracefully on smaller screens. */
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Round button styling. A flex layout ensures that the text is centered.
+ * The high border-radius gives the pill shape. */
+.round-button {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 20px;
+  border-radius: 50px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
-.logo {
-  width: 260px;
-  height: 260px;
-  object-fit: contain;
-  /* Remove border and box around the logo for a cleaner look */
-  border: none;
-  border-radius: 14px;
-  background: none;
-  padding: 0;
-  filter: drop-shadow(0 0 40px var(--purple)) drop-shadow(0 0 70px var(--accent-dark));
+.round-button:hover {
+  background-color: #444;
 }
 
-/* Snow layer container ensures overlay sits above backgrounds */
-#snow-canvas-wrap {
-  position: fixed;
-  inset: 0;
-  z-index: 999;
-  pointer-events: none;
+/* Generic content wrapper for simple pages */
+.content {
+  max-width: 700px;
+  width: 100%;
+  text-align: left;
 }
 
-/* Responsive adjustments */
-@media (max-width: 900px) {
-  .layout { flex-direction: column; }
-  .sidebar {
-    width: 100%;
-    height: auto;
-    padding: 20px 0;
-    border-right: none;
-    border-bottom: var(--border);
-  }
-  .sidebar-item { display: inline-block; padding: 14px 26px; }
-  .guide-box {
-    padding: 36px 30px;
-    margin-top: 12vh;
-  }
-  .box-content { flex-direction: column; gap: 40px; text-align: center; }
-  .logo { width: 200px; height: 200px; }
-  .guide-title { font-size: 4.6rem; }
-  .valk-title { font-size: 2.8rem; }
-  .cta-button { font-size: 1.2rem; }
+.content h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.content p {
+  font-size: 18px;
+  line-height: 1.6;
 }
