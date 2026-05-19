@@ -1,27 +1,22 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Valk GUIDEBOOK — VALK.WTF</title>
-  <!-- Import fonts and styles -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valk GUIDEBOOK — VALK.WTF</title>
+  <!-- Import fonts and the shared stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- Snow overlay -->
-  <div id="snow-canvas-wrap" aria-hidden="true"></div>
-
-  <!-- Page structure -->
   <div class="layout">
-
     <!-- Sidebar navigation -->
     <aside class="sidebar">
-      <!-- Homepage link now functions and no longer displays the '(icon)' text -->
       <a href="https://valk.help" class="sidebar-item home">home</a>
       <a href="https://valk.help/valkexe" class="sidebar-item">valkexe</a>
       <a href="https://valk.help/Crusader" class="sidebar-item">crusader</a>
@@ -30,34 +25,39 @@
       <a href="https://valk.help/valkChams" class="sidebar-item">valk_chams</a>
       <a href="https://valk.help/void" class="sidebar-item">void</a>
       <a href="https://valk.help/nfa" class="sidebar-item">nfa</a>
+      <!-- Added DMA tab to the navigation -->
+      <a href="https://valk.help/dma" class="sidebar-item">dma</a>
     </aside>
-
-    <!-- Main content -->
+    <!-- Main content area -->
     <main class="main">
       <div class="guide-box">
         <div class="box-content">
-
-          <!-- Left text column -->
+          <!-- Left column: text -->
           <div class="text-area">
             <div class="valk-title">Valk</div>
-            <div class="guide-title">GUIDBOOK</div>
+            <!-- Correct spelling of "Guidebook" -->
+            <div class="guide-title">GUIDEBOOK</div>
             <div class="small-text">valk.wtf</div>
-            <button class="cta-button" onclick="location.href='https://valk.help/valkexe'">get started</button>
+            <button
+              class="cta-button"
+              onclick="location.href='https://valk.help/valkexe'"
+            >
+              get started
+            </button>
           </div>
-
-          <!-- Right logo column -->
+          <!-- Right column: logo -->
           <div class="logo-area">
-            <img src="https://imagedelivery.net/HL_Fwm__tlvUGLZF2p74xw/c81d5ef2-c32c-48c2-0582-3458edb3e400/public" 
-                 alt="Valk Logo" class="logo">
+            <img
+              src="https://imagedelivery.net/HL_Fwm__tlvUGLZF2p74xw/c81d5ef2-c32c-48c2-0582-3458edb3e400/public"
+              alt="Valk Logo"
+              class="logo"
+            />
           </div>
-
         </div>
       </div>
     </main>
-
   </div>
-
-  <!-- Scripts -->
+  <!-- Shared script for snow and tilt effects -->
   <script src="script.js"></script>
 </body>
 </html>
