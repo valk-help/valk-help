@@ -8,13 +8,17 @@
 */
 
 (function(){
-  // Redirect uppercase NFAs path to lowercase nfa
+  // Redirect any old NFAs URL to lowercase /nfa
   try {
     const pathname = window.location.pathname || '';
+
     if (pathname.toLowerCase().includes('/nfas')) {
       window.location.replace('https://valk.help/nfa');
     }
   } catch (e) {
+    // Fail silently
+  }
+})();
     // Fail silently if redirect not possible
   }
   // Snow effect settings
