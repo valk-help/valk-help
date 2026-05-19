@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dichen HDMI Fuser — DMA — VALK.WTF</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a href="https://valk.help" class="sidebar-item home">home</a>
+      <a href="https://valk.help/valkexe" class="sidebar-item">valkexe</a>
+      <a href="https://valk.help/Crusader" class="sidebar-item">crusader</a>
+      <a href="https://valk.help/vega" class="sidebar-item">vega</a>
+      <a href="https://valk.help/veax" class="sidebar-item">veax</a>
+      <a href="https://valk.help/valkChams" class="sidebar-item">valk_chams</a>
+      <a href="https://valk.help/void" class="sidebar-item">void</a>
+      <a href="https://valk.help/nfa" class="sidebar-item">nfa</a>
+      <a href="https://valk.help/dma" class="sidebar-item active">dma</a>
+    </aside>
+    <main class="main">
+      <div class="content">
+        <h1>Dichen HDMI Fuser</h1>
+        <p>TEST</p>
+      </div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
