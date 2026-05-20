@@ -164,11 +164,11 @@
     return section;
   }
 
-  document.title = data.title + " - MavisDMA Guide";
+  document.title = data.title + " - ValkDMA Guide";
 
   var hero = el("div", "section-hero");
   var copy = el("div");
-  copy.appendChild(el("p", "eyebrow", "mavisdma guide"));
+  copy.appendChild(el("p", "eyebrow", "ValkDMA guide"));
   copy.appendChild(el("h1", "guide-title", data.title));
   if (totalSteps) {
     countNode = el("div", "section-count");
