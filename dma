@@ -3,83 +3,187 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DMA — VALK.WTF</title>
-  <!-- Shared fonts and stylesheet -->
+  <title>DMA Guide - VALK.WTF</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body data-page="dma">
+  <div id="snow-canvas-wrap" aria-hidden="true"></div>
+
   <div class="layout">
-    <!-- Sidebar navigation; mark DMA as active to highlight the current page -->
-    <aside class="sidebar">
-      <a href="https://valk.help" class="sidebar-item home">home</a>
-      <a href="https://valk.help/valkexe" class="sidebar-item">valkexe</a>
-      <a href="https://valk.help/Crusader" class="sidebar-item">crusader</a>
-      <a href="https://valk.help/vega" class="sidebar-item">vega</a>
-      <a href="https://valk.help/veax" class="sidebar-item">veax</a>
-      <a href="https://valk.help/valkChams" class="sidebar-item">valk_chams</a>
-      <a href="https://valk.help/void" class="sidebar-item">void</a>
-      <a href="https://valk.help/nfa" class="sidebar-item">nfa</a>
-      <a href="https://valk.help/dma" class="sidebar-item active">dma</a>
+    <aside class="sidebar" aria-label="Guide navigation">
+      <a href="index.html" class="sidebar-item home" data-page-link="home">home</a>
+      <a href="valkexe.html" class="sidebar-item" data-page-link="valkexe">valkexe</a>
+      <a href="crusader.html" class="sidebar-item" data-page-link="crusader">crusader</a>
+      <a href="vega.html" class="sidebar-item" data-page-link="vega">vega</a>
+      <a href="veax.html" class="sidebar-item" data-page-link="veax">veax</a>
+      <a href="valkchams.html" class="sidebar-item" data-page-link="valkchams">valk_chams</a>
+      <a href="void.html" class="sidebar-item" data-page-link="void">void</a>
+      <a href="nfa.html" class="sidebar-item" data-page-link="nfa">nfa</a>
+      <a href="dma.html" class="sidebar-item" data-page-link="dma">dma</a>
     </aside>
-    <!-- Main content area -->
+
     <main class="main">
-      <div class="dma-container">
-        <h1>DMA</h1>
-        <div class="button-grid">
-          <!-- Each button now links to an anchor on this page rather than a separate file. -->
-          <a href="#hardware-setup" class="round-button">Hardware Setup</a>
-          <a href="#software-setup" class="round-button">Software Setup</a>
-          <a href="#testing-verification" class="round-button">Testing &amp; Verification</a>
-          <a href="#firmware-updates" class="round-button">Firmware Updates</a>
-          <a href="#makcu-setup" class="round-button">Makcu Setup</a>
-          <a href="#ferrum-setup" class="round-button">Ferrum Setup</a>
-          <a href="#dichen-dc500-fuser" class="round-button">Dichen DC500 Fuser</a>
-          <a href="#dichen-hdmi-fuser" class="round-button">Dichen HDMI Fuser</a>
+      <section class="guide-box dma-guide" aria-labelledby="page-title">
+        <div class="dma-hero">
+          <div>
+            <p class="eyebrow">valk.wtf guide</p>
+            <h1 id="page-title" class="guide-title">DMA</h1>
+            <p class="lead">A cleaner setup hub for Mavis DMA hardware, software, testing, firmware, boards, fusers, and support links.</p>
+          </div>
+          <img
+            src="https://imagedelivery.net/HL_Fwm__tlvUGLZF2p74xw/c81d5ef2-c32c-48c2-0582-3458edb3e400/public"
+            alt="Valk logo"
+            class="dma-hero-image"
+          />
         </div>
-        <!-- Content sections for each guide topic. These sections are anchored so that the buttons above scroll to them. -->
-        <div class="content">
-          <section id="hardware-setup">
-            <h2>Hardware Setup</h2>
-            <p>TEST</p>
-          </section>
-          <section id="software-setup">
-            <h2>Software Setup</h2>
-            <p>TEST</p>
-          </section>
-          <section id="testing-verification">
-            <h2>Testing &amp; Verification</h2>
-            <p>TEST</p>
-          </section>
-          <section id="firmware-updates">
-            <h2>Firmware Updates</h2>
-            <p>TEST</p>
-          </section>
-          <section id="makcu-setup">
-            <h2>Makcu Setup</h2>
-            <p>TEST</p>
-          </section>
-          <section id="ferrum-setup">
-            <h2>Ferrum Setup</h2>
-            <p>TEST</p>
-          </section>
-          <section id="dichen-dc500-fuser">
-            <h2>Dichen DC500 Fuser</h2>
-            <p>TEST</p>
-          </section>
-          <section id="dichen-hdmi-fuser">
-            <h2>Dichen HDMI Fuser</h2>
-            <p>TEST</p>
-          </section>
+
+        <div class="guide-content">
+          <div class="button-grid dma-buttons">
+            <a href="dma-hardware.html" class="round-button">hardware</a>
+            <a href="dma-software.html" class="round-button">software</a>
+            <a href="dma-testing.html" class="round-button">testing</a>
+            <a href="dma-firmware.html" class="round-button">firmware</a>
+            <a href="dma-makcu.html" class="round-button">makcu</a>
+            <a href="dma-hdmi.html" class="round-button">hdmi fuser</a>
+            <a href="dma-support.html" class="round-button">support</a>
+          </div>
+
+          <div class="external-actions" aria-label="External DMA references">
+            <a href="https://discord.gg/valkexe" target="_blank" rel="noopener noreferrer" class="primary-button">Valk Discord</a>
+          </div>
+
+          <div class="dma-panel-grid" id="setup">
+            <article class="dma-panel" id="hardware">
+              <img
+                src="assets/mavis/02-hardware-setup-hardware-setup.png"
+                alt="Hardware setup"
+              />
+              <div>
+                <span class="panel-kicker">step 01</span>
+                <h2>Hardware setup</h2>
+                <p>Install the DMA card in the correct PCIe slot, keep cables seated firmly, and confirm the second PC can see the device before changing anything else.</p>
+                <ul class="glow-list">
+                  <li>DMA card seated in PCIe</li>
+                  <li>Control PC connected</li>
+                  <li>BIOS settings checked before use</li>
+                </ul>
+                <a href="dma-hardware.html" class="inline-guide-link">open hardware guide</a>
+              </div>
+            </article>
+
+            <article class="dma-panel" id="software">
+              <img
+                src="assets/mavis/16-software-setup-run-the-tool.png"
+                alt="Run the software setup tool"
+              />
+              <div>
+                <span class="panel-kicker">step 02</span>
+                <h2>Software setup</h2>
+                <p>Use the files included with your order, install only the required drivers, and keep your setup folder organized so support can check it quickly.</p>
+                <ul class="glow-list">
+                  <li>Drivers installed</li>
+                  <li>Provider files kept together</li>
+                  <li>Tester ready for verification</li>
+                </ul>
+                <a href="dma-software.html" class="inline-guide-link">open software guide</a>
+              </div>
+            </article>
+
+            <article class="dma-panel" id="testing">
+              <img
+                src="assets/mavis/17-software-setup-verify-installation.png"
+                alt="Verify installation"
+              />
+              <div>
+                <span class="panel-kicker">step 03</span>
+                <h2>Testing and verification</h2>
+                <p>Run your tester before opening support tickets. Save screenshots of device status, speed results, and any error text.</p>
+                <ul class="glow-list">
+                  <li>Device detected</li>
+                  <li>Read speed looks normal</li>
+                  <li>Errors captured with screenshots</li>
+                </ul>
+                <a href="dma-testing.html" class="inline-guide-link">open testing guide</a>
+              </div>
+            </article>
+
+            <article class="dma-panel" id="firmware">
+              <img
+                src="assets/mavis/18-firmware-updates-jtag-port-connection.png"
+                alt="JTAG port connection"
+              />
+              <div>
+                <span class="panel-kicker">step 04</span>
+                <h2>Firmware updates</h2>
+                <p>Firmware should be handled carefully. Ask support before flashing if you are unsure which file matches your board.</p>
+                <ul class="glow-list">
+                  <li>Confirm board model</li>
+                  <li>Use the matching firmware only</li>
+                  <li>Do not unplug during flashing</li>
+                </ul>
+                <a href="dma-firmware.html" class="inline-guide-link">open firmware guide</a>
+              </div>
+            </article>
+          </div>
+
+          <h2 id="boards">Boards and fuser guides</h2>
+          <div class="dma-mini-grid">
+            <article class="guide-card">
+              <img
+                src="assets/mavis/27-makcu-setup-makcu-setup.png"
+                alt="Makcu setup"
+                class="card-thumb"
+              />
+              <span>makcu</span>
+              <strong>Keyboard and mouse board</strong>
+              <small>Use for Makcu setup notes, device type checks, and provider integration reminders.</small>
+              <a href="dma-makcu.html" class="inline-guide-link">open makcu guide</a>
+            </article>
+            <article class="guide-card">
+              <img
+                src="assets/mavis/57-dichen-hdmi-fuser-dichen-hdmi-fuser.png"
+                alt="Dichen HDMI fuser"
+                class="card-thumb"
+              />
+              <span>hdmi</span>
+              <strong>4K HDMI fuser</strong>
+              <small>Add EDID, refresh rate, and overlay display notes here when needed.</small>
+              <a href="dma-hdmi.html" class="inline-guide-link">open hdmi guide</a>
+            </article>
+          </div>
+
+          <div class="image-callout">
+            <img
+              src="assets/mavis/57-dichen-hdmi-fuser-dichen-hdmi-fuser.png"
+              alt="Dichen HDMI fuser"
+            />
+            <div>
+              <h2 id="requirements">Requirements</h2>
+              <ul class="glow-list">
+                <li>Supported DMA card and compatible firmware</li>
+                <li>Second PC or laptop for control</li>
+                <li>Stable USB and network connection</li>
+                <li>Correct board or fuser for your setup</li>
+                <li>Order files, key, and support ticket details available</li>
+              </ul>
+            </div>
+          </div>
+
+          <div id="support" class="requirements support-panel">
+            <strong>Need help?</strong>
+            <p>Open a support ticket with your order number, DMA card model, control PC specs, screenshots, and the exact step that failed.</p>
+            <div class="external-actions">
+              <a href="https://discord.gg/valkexe" target="_blank" rel="noopener noreferrer" class="primary-button">Valk Discord</a>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
     </main>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
