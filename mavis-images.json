@@ -1,0 +1,242 @@
+[
+    {
+        "file":  "assets/mavis/01-welcome-mavisdma-logo.png",
+        "bytes":  510180
+    },
+    {
+        "file":  "assets/mavis/02-hardware-setup-hardware-setup.png",
+        "bytes":  2749377
+    },
+    {
+        "file":  "assets/mavis/03-hardware-setup-remove-case-bracket.png",
+        "bytes":  382127
+    },
+    {
+        "file":  "assets/mavis/04-hardware-setup-insert-dma-card.png",
+        "bytes":  199064
+    },
+    {
+        "file":  "assets/mavis/05-hardware-setup-secure-the-card.png",
+        "bytes":  264290
+    },
+    {
+        "file":  "assets/mavis/06-hardware-setup-secure-the-card-view-2.png",
+        "bytes":  180239
+    },
+    {
+        "file":  "assets/mavis/07-hardware-setup-kill-switch-check.png",
+        "bytes":  360116
+    },
+    {
+        "file":  "assets/mavis/08-hardware-setup-kill-switch-check-view-2.png",
+        "bytes":  263520
+    },
+    {
+        "file":  "assets/mavis/09-hardware-setup-connect-data-cable.png",
+        "bytes":  258776
+    },
+    {
+        "file":  "assets/mavis/10-hardware-setup-intel-bios-settings.png",
+        "bytes":  261279
+    },
+    {
+        "file":  "assets/mavis/11-hardware-setup-amd-bios-settings.png",
+        "bytes":  270149
+    },
+    {
+        "file":  "assets/mavis/12-hardware-setup-fast-boot.png",
+        "bytes":  295912
+    },
+    {
+        "file":  "assets/mavis/13-hardware-setup-nx-bit.png",
+        "bytes":  291308
+    },
+    {
+        "file":  "assets/mavis/14-hardware-setup-csm-support.png",
+        "bytes":  224056
+    },
+    {
+        "file":  "assets/mavis/15-hardware-setup-windows-core-isolation.png",
+        "bytes":  23299
+    },
+    {
+        "file":  "assets/mavis/16-software-setup-run-the-tool.png",
+        "bytes":  12214
+    },
+    {
+        "file":  "assets/mavis/17-software-setup-verify-installation.png",
+        "bytes":  13106
+    },
+    {
+        "file":  "assets/mavis/18-firmware-updates-jtag-port-connection.png",
+        "bytes":  240260
+    },
+    {
+        "file":  "assets/mavis/19-firmware-updates-driver-install-window.png",
+        "bytes":  40541
+    },
+    {
+        "file":  "assets/mavis/20-firmware-updates-ch347fpgatool-folder.png",
+        "bytes":  8572
+    },
+    {
+        "file":  "assets/mavis/21-firmware-updates-ch347fpgatool-contents.png",
+        "bytes":  148750
+    },
+    {
+        "file":  "assets/mavis/22-firmware-updates-select-xc7a75t.png",
+        "bytes":  63578
+    },
+    {
+        "file":  "assets/mavis/23-firmware-updates-change-to-bin.png",
+        "bytes":  17173
+    },
+    {
+        "file":  "assets/mavis/24-firmware-updates-select-firmware-file.png",
+        "bytes":  51395
+    },
+    {
+        "file":  "assets/mavis/25-firmware-updates-start-flashing.png",
+        "bytes":  77849
+    },
+    {
+        "file":  "assets/mavis/26-firmware-updates-flashing-progress.png",
+        "bytes":  214715
+    },
+    {
+        "file":  "assets/mavis/27-makcu-setup-makcu-setup.png",
+        "bytes":  868513
+    },
+    {
+        "file":  "assets/mavis/28-makcu-setup-flash-left-port-enter-mode.png",
+        "bytes":  189004
+    },
+    {
+        "file":  "assets/mavis/29-makcu-setup-makcu-connected-in-flash-mode.png",
+        "bytes":  109479
+    },
+    {
+        "file":  "assets/mavis/30-makcu-setup-flash-left-port-execute.png",
+        "bytes":  112988
+    },
+    {
+        "file":  "assets/mavis/31-makcu-setup-flash-right-port-enter-mode.png",
+        "bytes":  190301
+    },
+    {
+        "file":  "assets/mavis/32-makcu-setup-flash-right-port-execute.png",
+        "bytes":  113281
+    },
+    {
+        "file":  "assets/mavis/33-makcu-setup-install-ch343-driver.png",
+        "bytes":  87763
+    },
+    {
+        "file":  "assets/mavis/34-makcu-setup-connect-middle-port.png",
+        "bytes":  181766
+    },
+    {
+        "file":  "assets/mavis/35-makcu-setup-find-com-port.png",
+        "bytes":  114636
+    },
+    {
+        "file":  "assets/mavis/36-makcu-setup-change-com-port.png",
+        "bytes":  48427
+    },
+    {
+        "file":  "assets/mavis/37-makcu-setup-com-port-selection.png",
+        "bytes":  27735
+    },
+    {
+        "file":  "assets/mavis/38-ferrum-setup-ferrum-setup.png",
+        "bytes":  762323
+    },
+    {
+        "file":  "assets/mavis/39-ferrum-setup-connect-usb-cables.png",
+        "bytes":  1407895
+    },
+    {
+        "file":  "assets/mavis/40-ferrum-setup-install-cp210x-driver.png",
+        "bytes":  34560
+    },
+    {
+        "file":  "assets/mavis/41-ferrum-setup-install-ferrum-app.png",
+        "bytes":  31853
+    },
+    {
+        "file":  "assets/mavis/42-ferrum-setup-view-connected-boards.png",
+        "bytes":  33121
+    },
+    {
+        "file":  "assets/mavis/43-ferrum-setup-select-device-type.png",
+        "bytes":  33294
+    },
+    {
+        "file":  "assets/mavis/44-ferrum-setup-connect-provider-software.png",
+        "bytes":  16705
+    },
+    {
+        "file":  "assets/mavis/45-ferrum-setup-connect-provider-software-view-2.png",
+        "bytes":  15630
+    },
+    {
+        "file":  "assets/mavis/57-dichen-hdmi-fuser-dichen-hdmi-fuser.png",
+        "bytes":  1811419
+    },
+    {
+        "file":  "assets/mavis/58-dichen-hdmi-fuser-resolution-check.png",
+        "bytes":  282094
+    },
+    {
+        "file":  "assets/mavis/59-dichen-hdmi-fuser-resolution-check-view-2.png",
+        "bytes":  191568
+    },
+    {
+        "file":  "assets/mavis/60-dichen-hdmi-fuser-connect-main-display.png",
+        "bytes":  89616
+    },
+    {
+        "file":  "assets/mavis/61-dichen-hdmi-fuser-connect-main-pc.png",
+        "bytes":  89667
+    },
+    {
+        "file":  "assets/mavis/62-dichen-hdmi-fuser-connect-second-pc.png",
+        "bytes":  89541
+    },
+    {
+        "file":  "assets/mavis/63-dichen-hdmi-fuser-connect-power.png",
+        "bytes":  89068
+    },
+    {
+        "file":  "assets/mavis/64-dichen-hdmi-fuser-power-on-fuser.png",
+        "bytes":  110680
+    },
+    {
+        "file":  "assets/mavis/65-dichen-hdmi-fuser-verify-status-lights.png",
+        "bytes":  110768
+    },
+    {
+        "file":  "assets/mavis/66-dichen-hdmi-fuser-control-buttons.png",
+        "bytes":  110347
+    },
+    {
+        "file":  "assets/mavis/67-dichen-hdmi-fuser-unplug-all-hdmi-cables.png",
+        "bytes":  90539
+    },
+    {
+        "file":  "assets/mavis/68-dichen-hdmi-fuser-install-monitorassetmanager.png",
+        "bytes":  198131
+    },
+    {
+        "file":  "assets/mavis/69-dichen-hdmi-fuser-save-monitor-edid-file.png",
+        "bytes":  164698
+    },
+    {
+        "file":  "assets/mavis/70-dichen-hdmi-fuser-save-monitor-edid-file-view-2.png",
+        "bytes":  125222
+    },
+    {
+        "file":  "assets/mavis/71-dichen-hdmi-fuser-open-edid-flash-tool.png",
+        "bytes":  55525
+    }
+]
