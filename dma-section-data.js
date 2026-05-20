@@ -109,7 +109,7 @@ window.DMA_SECTION_DATA = {
     description: "Validation and troubleshooting common issues.",
     heroImage: "assets/mavis/01-welcome-mavisdma-logo.png",
     resources: [
-      { label: "Download MavisDMA Tester", href: "https://github.com/ShadowSyntax/lones-DMA-speed-test", detail: "Speed and throughput test utility" }
+      { label: "Download DMA Speed Tester", href: "https://github.com/ShadowSyntax/lones-DMA-speed-test", detail: "Speed and throughput test utility" }
     ],
     groups: [
       {
@@ -117,7 +117,7 @@ window.DMA_SECTION_DATA = {
         cards: [
           {
             title: "Test Procedure",
-            items: ["Connect cable to the Data Port.", "Download and open MavisDMA Tester as admin.", "Press 1 to start the test.", "Wait for results."]
+            items: ["Connect cable to the Data Port.", "Download and open DMA Tester as admin.", "Press 1 to start the test.", "Wait for results."]
           },
           {
             title: "Speed Results Guide",
@@ -144,7 +144,7 @@ window.DMA_SECTION_DATA = {
       {
         title: "What You'll Need",
         cards: [
-          { title: "Firmware Package", items: ["Latest firmware .zip file from your MavisDMA dashboard or purchase email."] },
+          { title: "Firmware Package", items: ["Latest firmware .zip file from your DMA dashboard or purchase email."] },
           { title: "USB-C Cable", items: ["The same USB-C cable you use for your DMA card DATA port."] }
         ]
       },
