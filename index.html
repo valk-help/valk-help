@@ -1,1 +1,70 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Valk product setup guides, downloads and troubleshooting in one place."><title>Valk Help — Find your setup guide</title><link rel="stylesheet" href="style.css"></head><body><div class="layout"><aside class="sidebar" aria-label="Guide navigation"></aside><main class="main"><div class="vh-home"><header class="vh-topbar"><p>THE VALK KNOWLEDGE BASE</p><a class="vh-store" href="https://valk.wtf">Visit storefront ↗</a></header><section class="vh-hero"><span class="vh-kicker">Your setup starts here</span><h1>Select your product</h1><p>Choose a product to open its downloads, setup instructions, and troubleshooting guide.</p></section><form class="vh-find" role="search" onsubmit="return false"><input type="search" id="vh-search" aria-label="Search guides" placeholder="Search your product or game…"><select id="vh-game" aria-label="Filter by game"><option value="">All games & products</option></select></form><div class="vh-sectionline"><h2>Product guides</h2><p id="vh-count" aria-live="polite"></p></div><div class="vh-grid" id="vh-grid"></div><p id="vh-empty" class="vh-empty" hidden>No matching guides. Try another product or game.</p><footer class="vh-footer"><span>VΛLK HELP / SETUP & SUPPORT</span><span>Keep your license key private.</span></footer></div></main></div><script src="guide-directory.js"></script><script src="guide-ui.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valk Guidebook - VALK.WTF</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="home">
+  <div id="snow-canvas-wrap" aria-hidden="true"></div>
+
+  <div class="layout">
+    <aside class="sidebar" aria-label="Guide navigation">
+      <a href="index.html" class="sidebar-item home" data-page-link="home">home</a>
+      <a href="valkexe.html" class="sidebar-item" data-page-link="valkexe">valkexe</a>
+      <a href="Crusader.html" class="sidebar-item" data-page-link="crusader">crusader</a>
+      <a href="vega.html" class="sidebar-item" data-page-link="vega">vega</a>
+      <a href="veax.html" class="sidebar-item" data-page-link="veax">veax</a>
+      <a href="valkChams.html" class="sidebar-item" data-page-link="valkchams">valk_chams</a>
+      <a href="void.html" class="sidebar-item" data-page-link="void">void</a>
+      <a href="nfa.html" class="sidebar-item" data-page-link="nfa">nfa</a>
+      <a href="dma.html" class="sidebar-item" data-page-link="dma">dma</a>
+    </aside>
+
+    <main class="main">
+      <section class="guide-box home-box" aria-labelledby="home-title">
+        <div class="home-hero">
+          <div class="home-copy">
+            <p class="eyebrow">valk.wtf</p>
+            <h1 id="home-title" class="home-title"><span>Valk</span> Guidebook</h1>
+            <p class="lead">Choose your product to open its guide.</p>
+            <a class="primary-button" href="#product-guides">browse guides</a>
+          </div>
+
+          <div class="logo-shell">
+            <img
+              src="https://imagedelivery.net/HL_Fwm__tlvUGLZF2p74xw/c81d5ef2-c32c-48c2-0582-3458edb3e400/public"
+              alt="Valk logo"
+              class="logo"
+            />
+          </div>
+        </div>
+
+        <div id="product-guides" class="guide-grid" aria-label="Guide pages">
+          <a href="valkexe.html" class="guide-card"><span>Rainbow Six Siege</span><strong>Valk.exe</strong><small>Download, activate and get started</small></a>
+          <a href="Crusader.html" class="guide-card"><span>Rainbow Six Siege</span><strong>Crusader</strong><small>Installation and common fixes</small></a>
+          <a href="vega.html" class="guide-card"><span>Rainbow Six Siege</span><strong>Vega</strong><small>Downloads and troubleshooting</small></a>
+          <a href="veax.html" class="guide-card"><span>Rainbow Six Siege</span><strong>Veax</strong><small>Launch and overlay setup</small></a>
+          <a href="valkChams.html" class="guide-card"><span>Rainbow Six Siege</span><strong>Valk Chams</strong><small>Installation and configuration</small></a>
+          <a href="void.html" class="guide-card"><span>Rainbow Six Siege</span><strong>Void</strong><small>Compatibility and requirements</small></a>
+          <a href="nfa.html" class="guide-card"><span>Accounts</span><strong>NFA Accounts</strong><small>Account linking and Xbox app help</small></a>
+          <a href="dma.html" class="guide-card"><span>Hardware</span><strong>DMA</strong><small>Hardware, firmware and software setup</small></a>
+          <a href="astralis.html" class="guide-card"><span>Rust</span><strong>Astralis</strong><small>Activation, launch and overlay fixes</small></a>
+          <a href="matrix.html" class="guide-card"><span>Rust</span><strong>Matrix</strong><small>Loader setup and automatic injection</small></a>
+          <a href="disconnect.html" class="guide-card"><span>Rust</span><strong>Disconnect</strong><small>Custom loader and installation</small></a>
+          <a href="fluent.html" class="guide-card"><span>Rust</span><strong>Fluent</strong><small>Web client and license activation</small></a>
+          <a href="lucent.html" class="guide-card"><span>Rust</span><strong>Lucent</strong><small>Loader, reboot and launch sequence</small></a>
+          <a href="rust-disconnect-internal.html" class="guide-card"><span>Rust</span><strong>Disconnect Internal</strong><small>Installation, launch and crash fixes</small></a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
